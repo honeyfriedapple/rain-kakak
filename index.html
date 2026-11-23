@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Untuk Kakak</title>
+  <meta name="theme-color" content="#0d1726">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="langit" aria-hidden="true"></div>
+  <canvas id="hujan" aria-hidden="true"></canvas>
+
+  <header class="atas">
+    <div class="titik-wadah" id="titik" aria-hidden="true"></div>
+    <button class="suara" id="suara" type="button"></button>
+  </header>
+
+  <main>
+
+    <!-- 1. Kaca berkabut -->
+    <section class="scene aktif" id="s0">
+      <div class="tengah">
+        <p class="kecil" id="s0-atas"></p>
+        <h1 id="s0-judul"></h1>
+        <p class="sub" id="s0-sub"></p>
+        <button class="tombol" id="s0-lanjut" type="button" hidden></button>
+      </div>
+      <canvas id="kabut"></canvas>
+      <p class="petunjuk" id="s0-petunjuk"></p>
+      <button class="lewati" id="s0-lewati" type="button" hidden></button>
+    </section>
+
+    <!-- 2. Tetes doa -->
+    <section class="scene" id="s1">
+      <div class="tengah">
+        <h2 id="s1-judul"></h2>
+        <p class="sub" id="s1-petunjuk"></p>
+        <div class="tetes-wadah" id="tetesWadah"></div>
+        <div class="kartu" id="kartuDoa" aria-live="polite"></div>
+        <p class="hitung" id="hitung"></p>
+        <button class="tombol" id="s1-lanjut" type="button" hidden></button>
+      </div>
+    </section>
+
+    <!-- 3. Surat -->
+    <section class="scene" id="s2">
+      <div class="tengah">
+        <button class="amplop" id="amplop" type="button" aria-label="Buka amplop">
+          <span class="amplop-badan"></span>
+          <span class="amplop-tutup"></span>
+          <span class="amplop-hati"></span>
+        </button>
+        <p class="sub" id="s2-petunjuk"></p>
+        <article class="surat" id="surat" hidden>
+          <div class="surat-isi" id="suratIsi"></div>
+        </article>
+        <button class="tombol" id="s2-lanjut" type="button" hidden></button>
+      </div>
+    </section>
+
+    <!-- 4. Merajut -->
+    <section class="scene" id="s3">
+      <div class="tengah">
+        <h2 id="s3-judul"></h2>
+        <p class="sub" id="s3-petunjuk"></p>
+        <svg class="rajut-svg" viewBox="0 0 600 220" aria-hidden="true">
+          <path id="benangHantu" d="M20 150 C 80 30, 150 30, 210 105 S 330 195, 390 100 S 510 25, 580 125" />
+          <path id="benang" d="M20 150 C 80 30, 150 30, 210 105 S 330 195, 390 100 S 510 25, 580 125" />
+          <circle id="jarum" r="7" cx="20" cy="150" />
+        </svg>
+        <p class="kalimat" id="kalimat"></p>
+        <p class="tambahan" id="tambahan"></p>
+        <button class="tahan" id="tahan" type="button"></button>
+        <button class="tombol" id="s3-lanjut" type="button" hidden></button>
+      </div>
+    </section>
+
+    <!-- 5. Hujan reda -->
+    <section class="scene" id="s4">
+      <svg class="pelangi" id="pelangi" viewBox="0 0 400 220" aria-hidden="true">
+        <path d="M20 210 A180 180 0 0 1 380 210" stroke="#ff9eb5" />
+        <path d="M40 210 A160 160 0 0 1 360 210" stroke="#ffc999" />
+        <path d="M60 210 A140 140 0 0 1 340 210" stroke="#ffe9a3" />
+        <path d="M80 210 A120 120 0 0 1 320 210" stroke="#b7e8c0" />
+        <path d="M100 210 A100 100 0 0 1 300 210" stroke="#a9d4ff" />
+        <path d="M120 210 A80 80 0 0 1 280 210" stroke="#cdbdff" />
+      </svg>
+      <div class="tengah">
+        <h2 id="s4-judul"></h2>
+        <div class="baris" id="s4-baris"></div>
+        <div class="aksi">
+          <button class="tombol tipis" id="hujanLagi" type="button"></button>
+          <button class="tombol tipis" id="ulang" type="button"></button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <noscript><p style="position:relative;z-index:9;color:#fff;padding:2rem">Halaman ini butuh JavaScript supaya bisa dibuka.</p></noscript>
+
+  <script src="isi.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
