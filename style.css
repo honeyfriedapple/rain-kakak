@@ -256,9 +256,8 @@ h2 { font-size: clamp(2.2rem, 7vw, 3.2rem); }
   font-size: 1.08rem;
   color: var(--teks);
 }
-.kartu.awal { color: var(--teks-pudar); font-style: italic; }
+.kartu[hidden] { display: none; }
 .kartu.muncul p { animation: muncul .8s ease both; }
-.hitung { font-size: .85rem; color: var(--teks-pudar); letter-spacing: .08em; }
 
 /* ---------- scene 3, surat ---------- */
 .amplop {

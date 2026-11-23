@@ -33,7 +33,6 @@
   $('#s3-lanjut').textContent = I.rajut.lanjut;
 
   $('#s4-judul').textContent = I.penutup.judul;
-  $('#hujanLagi').textContent = I.penutup.hujanLagi;
   $('#ulang').textContent = I.penutup.ulang;
 
   I.penutup.baris.forEach(function (t, i) {
@@ -129,7 +128,7 @@
       rx.stroke();
     }
 
-    if (gainNode && suaraNyala) gainNode.gain.value = 0.2 * intensitas;
+    if (gainNode && suaraNyala) gainNode.gain.value = 0.035 * intensitas;
 
     requestAnimationFrame(bingkaiHujan);
   }
@@ -173,10 +172,10 @@
     sumber.loop = true;
     var hp = ac.createBiquadFilter();
     hp.type = 'highpass';
-    hp.frequency.value = 260;
+    hp.frequency.value = 450;
     var lp = ac.createBiquadFilter();
     lp.type = 'lowpass';
-    lp.frequency.value = 5200;
+    lp.frequency.value = 2200;
     gainNode = ac.createGain();
     gainNode.gain.value = 0;
     sumber.connect(hp);
@@ -187,11 +186,34 @@
     return true;
   }
 
+  var timerTetes = null;
+  function tetesSuara() {
+    clearTimeout(timerTetes);
+    if (!suaraNyala || !ac) return;
+    var t = ac.currentTime;
+    var o = ac.createOscillator();
+    var g = ac.createGain();
+    var f = 1400 + Math.random() * 1500;
+    var kuat = 0.006 * Math.max(intensitas, 0.2);
+    o.type = 'sine';
+    o.frequency.setValueAtTime(f, t);
+    o.frequency.exponentialRampToValueAtTime(f * 0.6, t + 0.08);
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.linearRampToValueAtTime(kuat, t + 0.005);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.12);
+    o.connect(g);
+    g.connect(ac.destination);
+    o.start(t);
+    o.stop(t + 0.15);
+    timerTetes = setTimeout(tetesSuara, 300 + Math.random() * 1100);
+  }
+
   tombolSuara.addEventListener('click', function () {
     if (!ac && !siapSuara()) return;
     if (ac.state === 'suspended') ac.resume();
     suaraNyala = !suaraNyala;
     if (!suaraNyala && gainNode) gainNode.gain.value = 0;
+    if (suaraNyala) tetesSuara(); else clearTimeout(timerTetes);
     tombolSuara.textContent = suaraNyala ? I.suara.nyala : I.suara.mati;
   });
 
@@ -327,20 +349,16 @@
   var jumlahDoa = I.doa.daftar.length;
   var terbuka = 0;
 
-  function setKartu(teks, awal) {
+  function setKartu(teks) {
+    kartu.hidden = false;
     kartu.innerHTML = '';
     var p = document.createElement('p');
     p.textContent = teks;
     kartu.appendChild(p);
-    kartu.className = 'kartu' + (awal ? ' awal' : '');
+    kartu.className = 'kartu';
     void kartu.offsetWidth;
-    if (!awal) kartu.classList.add('muncul');
+    kartu.classList.add('muncul');
   }
-  function setHitung() {
-    $('#hitung').textContent = I.doa.hitung.replace('{n}', terbuka).replace('{total}', jumlahDoa);
-  }
-  setKartu(I.doa.awal, true);
-  setHitung();
 
   I.doa.daftar.forEach(function (teks, i) {
     var b = document.createElement('button');
@@ -354,12 +372,11 @@
       if (!b.classList.contains('terbuka')) {
         b.classList.add('terbuka');
         terbuka++;
-        setHitung();
         if (terbuka === jumlahDoa) {
           setTimeout(function () { $('#s1-lanjut').hidden = false; }, 1200);
         }
       }
-      setKartu(teks, false);
+      setKartu(teks);
     });
     wadah.appendChild(b);
   });
@@ -474,16 +491,6 @@
   /* =====================================================
      Scene 5, reda
   ===================================================== */
-  $('#hujanLagi').addEventListener('click', function () {
-    clearTimeout(timerReda);
-    document.body.classList.remove('reda');
-    target = 1;
-    setTimeout(function () {
-      document.body.classList.add('reda');
-      timerReda = setTimeout(function () { target = 0; }, 9000);
-    }, 9000);
-  });
-
   $('#ulang').addEventListener('click', function () {
     window.location.reload();
   });

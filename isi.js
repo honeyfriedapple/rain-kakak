@@ -7,31 +7,29 @@
 
 window.ISI = {
 
-  judulTab: "Untuk Kakak",
+  judulTab: "Happy birthday",
 
   kabut: {
     atas: "Di luar lagi hujan",
-    judul: "Selamat ulang tahun, Kak",
-    sub: "Masuk dulu ya. Di sini hangat, dan ada beberapa hal yang mau disampaikan.",
+    judul: "Happy birthday",
+    sub: "Berteduhlah sejenak, ada beberapa hal yang mau disampaikan.",
     petunjuk: "Usap kacanya pelan-pelan pakai jari atau kursor",
     lewati: "Buka kacanya langsung",
-    lanjut: "Masuk"
+    lanjut: "Berteduh"
   },
 
   doa: {
-    judul: "Tetes-tetes doa",
+    judul: "Rintik doa",
     petunjuk: "Sentuh tetesnya satu per satu",
-    awal: "Setiap tetes membawa satu doa untuk Kakak.",
-    hitung: "{n} dari {total} tetes",
-    lanjut: "Lanjut baca surat",
+    lanjut: "Next",
     daftar: [
-      "Semoga hidup Kakak bahagia, dan bahagianya betah tinggal lama.",
-      "Semoga hari-hari Kakak terasa lebih ringan dari kemarin, dan besok lebih ringan lagi.",
-      "Semoga semua urusan Kakak dimudahkan, sampai yang kelihatannya buntu pun ketemu jalannya.",
-      "Semoga Kakak selalu dikelilingi orang-orang yang tulus, yang mau menemani walau cuma duduk diam.",
-      "Semoga lelah Kakak selalu ada yang mendengar, dan selalu ada tempat untuk pulang.",
+      "Semoga hidup Kakak bahagia, dan semoga bahagia itu ada di setiap lembar hidup Kakak.",
+      "Semoga hari-hari Kakak diringankan dan juga dimudahkan, dan selalu dimudahkan.",
+      "Semoga segala urusan Kakak dimudahkan, bahkan yang kelihatannya buntu pun ketemu jalannya.",
+      "Semoga Kakak selalu dikelilingi orang-orang yang tulus, yang sayang sama Kakak dan mau menemani di setiap keadaan Kakak.",
+      "Semoga lelah Kakak selalu ada yang mendengarkan, dan selalu ada tempat untuk pulang.",
       "Semoga sehat, rezeki, dan tawa Kakak tidak pernah putus.",
-      "Semoga Kakak ingat bahwa istirahat juga bagian dari perjalanan."
+      "Semoga segala harapan yang Kakak inginkan terwujud satu per satu."
     ]
   },
 
@@ -39,35 +37,35 @@ window.ISI = {
     petunjuk: "Ada surat buat Kakak. Sentuh amplopnya ya",
     kepada: "Untuk Kakak,",
     paragraf: [
-      "Selamat ulang tahun, Kak. Semoga hari ini berjalan pelan dan menyenangkan.",
-      "Aku mau mulai dengan terima kasih. Terima kasih sudah menuliskan karya-karya hebat. Mungkin buat Kakak itu terasa biasa saja, tapi buat orang yang membacanya, karya itu jadi tempat belajar, tempat bersandar, dan kadang jadi alasan untuk lanjut.",
-      "Terima kasih juga sudah bertahan. Ada hari yang berat banget dan Kakak tetap bangun, tetap jalan, kadang sambil menangis, kadang sambil pura-pura baik-baik saja. Itu hebat juga, walau jarang ada yang tepuk tangan.",
-      "Kakak boleh capek. Kakak boleh berhenti sebentar. Hujan saja berhenti kalau waktunya sudah tiba, jadi Kakak tidak perlu kuat terus setiap saat.",
-      "Terima kasih sudah jadi Kakak yang seperti ini. Aku bangga banget."
+      "Selamat ulang tahun, Kak. Semoga hari ini berjalan menenangkan dan menyenangkan.",
+      "Aku mau berterima kasih atas keberadaan Kakak yang sangat menyenangkan, yang bisa memberikan dan menyebarkan kebahagiaan untuk orang-orang di sekitar Kakak. Terima kasih sudah menjadi sosok yang luar biasa.",
+      "Terima kasih sudah menuliskan karya-karya hebat. Mungkin hal yang Kakak rasa biasa saja bisa membuat orang yang membacanya merasa senang.",
+      "Terima kasih juga sudah bertahan. Ada hari yang berat dan Kakak tetap bangun, walau sambil tertatih-tatih. Semua yang Kakak lakukan selama ini sudah hebat banget, dengan atau tanpa apresiasi.",
+      "Kalau Kakak capek, boleh banget kok istirahat. Kami akan tetap mencintai Kakak apa adanya.",
+      "Aku sangat bahagia mengenal Kakak. Semoga doa-doa baik selalu menyertai, dan hal-hal buruk selalu dijauhkan."
     ],
     salam: "Dengan sayang,",
-    dari: "Seseorang yang selalu mendoakan Kakak",
-    lanjut: "Lanjut"
+    dari: "Kami semua",
+    lanjut: "Ayo merajut"
   },
 
   rajut: {
     judul: "Merajut sendu",
-    petunjuk: "Tahan tombolnya, biar benangnya terajut pelan-pelan",
-    tombol: "Tahan untuk merajut",
-    kalimat: "Semoga sendu yang dirajut hari ini jadi pelindung dari sendu dan rasa sakit yang akan datang.",
-    tambahan: "Semoga sedih yang sudah Kakak lewati sekarang jadi selimut, cukup hangat dan cukup tebal untuk hujan-hujan berikutnya.",
+    petunjuk: "Tahan agar benangnya terajut",
+    tombol: "Tahan rajutan",
+    kalimat: "Semoga sendu yang dirajut menjadi pelindung dari sendu dan rasa sakit yang akan datang.",
+    tambahan: "Semoga sedih yang sudah Kakak lewati sekarang berubah menjadi selimut yang menghangatkan dari hujan-hujan dan badai yang akan datang.",
     lanjut: "Lanjut"
   },
 
   penutup: {
     judul: "Selamat ulang tahun, Kak",
     baris: [
-      "Semoga hidup Kakak bahagia.",
+      "Semoga kebahagiaan akan selalu ada.",
       "Semoga setiap harinya diringankan, dan jadi lebih mudah dijalani.",
       "Semoga keberkahan ada di setiap langkah Kakak.",
       "Hujannya sudah reda. Tetap hangat ya, Kak."
     ],
-    hujanLagi: "Hujan lagi",
     ulang: "Baca dari awal"
   },
 

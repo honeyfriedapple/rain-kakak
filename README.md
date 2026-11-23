@@ -28,7 +28,7 @@ Buka `isi.js`, ubah teks di dalam tanda kutip, simpan. Kalau sudah di GitHub, kl
 
 Untuk menambah doa, tambahkan satu baris baru di bagian `daftar` dengan format yang sama dan jangan lupa koma di akhir baris sebelumnya.
 
-Bagian `dari` di surat sekarang berisi "Seseorang yang selalu mendoakan Kakak". Ganti dengan namamu kalau mau.
+Bagian `dari` di surat sekarang berisi "Kami semua". Ganti kalau mau.
 
 ## Catatan kecil
 
